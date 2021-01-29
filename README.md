@@ -1,2 +1,2 @@
-# Wake Students' Static Content
+# `Wake Students' Static Content`
 The Wake Students assets, such as images.
