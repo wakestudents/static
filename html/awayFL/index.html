@@ -4,10 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html; charset=UTF8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#382C2A">
     <meta name="viewport" content="height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
-    <title>Papa's Freezeria</title>
+    <title>Wake Students AwayFL Flash Player</title>
     <script type="text/javascript" src="./js/loader.js"></script>
     <style>
         * {
@@ -40,7 +38,7 @@
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
-            background-image: url("assets/todo.jpg");
+            background-image: url("assets/WSAwayFL.jpg");
             visibility: visible;
             transition: all 0.5s;
             z-index: 10;
@@ -68,7 +66,9 @@
 
     <script>
         window.addEventListener("load", () => {
-
+            const params = new Proxy(new URLSearchParams(window.location.search), {
+                get: (searchParams, prop) => searchParams.get(prop),
+            });
 
             config = {
                 "title": "text_test",
@@ -76,8 +76,10 @@
                 "stageScaleMode": "showAll",
                 "showFPS": false,
                 "debug": false,
-                "splash": "assets/freezeria.jpg",
+                "splash": "assets/WSAwayFL.jpg",
                 "start": null,
+                "width": 800,
+                "height": 600,
                 "x": 0,
                 "y": 0,
                 "w": "100%",
@@ -87,7 +89,7 @@
                 "progress": {
                     "direction": "lr",
                     "back": "#130d02",
-                    "line": "#c47d7b",
+                    "line": "#759dd3",
                     "rect": [
                         0.25,
                         0.77,
@@ -101,15 +103,13 @@
                     "path": "assets/fonts.swf"
                 }, {
                     "name": "text_test",
-                    "path": "assets/papas-freezeria.swf",
+                    "path": params.swf,
                     "resourceType": "GAME"
                 }],
                 "runtime": "js/PapaSeries.js"
             };
 
-
             Loader.init(config);
-
             Loader.runGame((fill) => { }, (instance) => { });
 
         })
