@@ -8,7 +8,10 @@
         <div id="player" style="height: 100vh;"></div>
     </body>
     <script>
-        swf2js.load("catMario.swf", {
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+            get: (searchParams, prop) => searchParams.get(prop),
+        });
+        swf2js.load(params.swf, {
             "tagId": "player"
         });
     </script>
